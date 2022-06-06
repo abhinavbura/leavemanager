@@ -10,7 +10,6 @@
 <?php
 if(isset($_POST['apply'])){//to run PHP script on submit 
 if(!empty($_POST['check_list'])){
-	echo "be my pet!!";
 	$role="staff";
 	$sql="SELECT FirstName,LastName,emp_id from tblemployees where role='$role'";
 	$query = mysqli_query($conn, $sql) or die(mysqli_error());
