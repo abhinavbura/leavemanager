@@ -19,12 +19,17 @@
 					</li>
 					<li>
 						<a href="department.php" class="dropdown-toggle no-arrow">
-							<span class="micon dw dw-calendar1"></span><span class="mtext">Department</span>
+							<span class="micon dw dw-house-1"></span><span class="mtext">Department</span>
 						</a>
 					</li>
 					<li>
 						<a href="leave_type.php" class="dropdown-toggle no-arrow">
 							<span class="micon dw dw-calendar1"></span><span class="mtext">Leave Type</span>
+						</a>
+					</li>
+					<li>
+						<a href="addevent.php" class="dropdown-toggle no-arrow">
+							<span class="micon dw dw-calendar1"></span><span class="mtext">Add Event</span>
 						</a>
 					</li>
 					<li class="dropdown">

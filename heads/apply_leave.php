@@ -1,5 +1,6 @@
 <?php include('includes/header.php')?>
 <?php include('../includes/session.php')?>
+
 <?php
 	if(isset($_POST['apply']))
 	{
@@ -12,6 +13,8 @@
 	$isread=0;
 	$leave_days=$_POST['leave_days'];
 	$datePosting = date("Y-m-d");
+	$num_days=geDate($_POST['date_from'],$_POST['date_to']);
+	
 
 	if($fromdate > $todate)
 	{
@@ -21,14 +24,14 @@
 	{
 	    echo "<script>alert('YOU HAVE EXCEEDED YOUR LEAVE LIMIT. LEAVE APPLICATION FAILED');</script>";
 	  }
+	  elseif($num_days<=0)
+	  {
+		echo "<script>alert('CHECK YOUR DATES YOU MAY HAVE APPLIED ON SUNDAY');</script>";
+
+	  }
 
 	else {
 		
-		$DF = date_create($_POST['date_from']);
-		$DT = date_create($_POST['date_to']);
-
-		$diff =  date_diff($DF , $DT );
-		$num_days = (1 + $diff->format("%a"));
 
 		$sql="INSERT INTO tblleaves(LeaveType,ToDate,FromDate,Description,Status,IsRead,empid,num_days,PostingDate) VALUES(:leave_type,:fromdate,:todate,:description,:status,:isread,:empid,:num_days,:datePosting)";
 		$query = $dbh->prepare($sql);

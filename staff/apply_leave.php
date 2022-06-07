@@ -1,5 +1,6 @@
 <?php include('includes/header.php')?>
 <?php include('../includes/session.php')?>
+
 <?php
 	if(isset($_POST['apply']))
 	{
@@ -15,6 +16,7 @@
 	$leave_days=$_POST['leave_days'];
 	$current = date("d-m-Y");
 	$datePosting=date("Y-m-d");
+	$num_days=geDate($_POST['date_from'],$_POST['date_to']);
 	if($fromdate > $todate)
 	{
 	    echo "<script>alert('End Date should be greater than Start Date');</script>";
@@ -27,6 +29,10 @@
 	{
 		echo "<script>alert('YOU ARE IN THE PAST');</script>";
 	}
+	elseif ($num_days<=0) {
+		echo "<script>alert('CHECK YOUR DATES. YOU MAY HAVE APPLIED ON SUNDAY');</script>";
+
+	}
 
 	else {
 		$image = $_FILES['image']['name'];
@@ -38,12 +44,6 @@
 	else {
 		echo "<script>alert('Please Select Picture to Update');</script>";
 	}
-		
-		$DF = date_create($_POST['date_from']);
-		$DT = date_create($_POST['date_to']);
-
-		$diff =  date_diff($DF , $DT );
-		$num_days = (1 + $diff->format("%a"));
 
 		$sql="INSERT INTO tblleaves(LeaveType,ToDate,FromDate,Description,Status,IsRead,empid,num_days,PostingDate,class_hour,substute,location) VALUES(:leave_type,:fromdate,:todate,:description,:status,:isread,:empid,:num_days,:datePosting,:classh,:substute,:location)";
 		$query = $dbh->prepare($sql);

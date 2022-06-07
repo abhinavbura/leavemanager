@@ -1,6 +1,8 @@
 <?php include('includes/header.php')?>
 <?php include('../includes/session.php')?>
 <?php
+date_default_timezone_set('UTC');
+
 	if(isset($_POST['apply']))
 	{
 	$empid=$session_id;
@@ -22,7 +24,6 @@
 	{
 		echo "<script>alert('YOU ARE IN THE PAST');</script>";
 	}
-
 	else {
 		
     $location="noimage.png";
@@ -51,6 +52,10 @@
 		$lastInsertId = $dbh->lastInsertId();
 		if($lastInsertId)
 		{
+			$v=0;
+			$sql = "update tblemployees set cclgrant='$v' where emp_id='$session_id'";
+			$result= $dbh->prepare($sql);
+			$result->execute();
 			echo "<script>alert('Leave Application was successful.');</script>";
 			echo "<script type='text/javascript'> document.location = 'leave_history.php'; </script>";
 		}

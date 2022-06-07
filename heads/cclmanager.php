@@ -98,7 +98,7 @@ if(!empty($_POST['check_list'])){
                             <input type="checkbox" name="check_list[]" value=<?php echo htmlentities ($row["FirstName"].$row["LastName"]) ?>><label><?php echo htmlentities ($row["FirstName"].$row["LastName"]) ?></label><br/>
                             <?php $cnt++;} ?>
                             <div class="modal-footer justify-content-center">
-							<button class="btn btn-primary" name="apply" id="apply" data-toggle="modal">Apply&nbsp;Leave</button>
+							<button class="btn btn-primary" name="apply" id="apply" data-toggle="modal">Grant&nbsp;CCL</button>
 							</div>
 						</form>
 					</div>
