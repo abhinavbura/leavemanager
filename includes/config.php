@@ -50,4 +50,22 @@ function familyName($fname) {
      }
   }
 
+
+
+function geDate($start_date, $end_date) {
+	$cnt=0;
+	while (strtotime($start_date) <= strtotime($end_date)) {
+		$timestamp = strtotime($start_date);
+		$day = date('D', $timestamp);
+		
+		if($day!="Sun")
+		{
+			$cnt++;
+		}
+
+		$start_date = date ("Y-m-d", strtotime("+1 days", strtotime($start_date)));
+	}
+	return $cnt;
+  }
+
 ?>

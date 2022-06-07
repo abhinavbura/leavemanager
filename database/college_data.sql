@@ -243,3 +243,4 @@ ALTER TABLE `tblleaves` ADD `location` VARCHAR(300) CHARACTER SET latin1 COLLATE
 
 ALTER TABLE `tblleaves` CHANGE `location` `location` VARCHAR(300) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL DEFAULT 'noimage.png';
 ALTER TABLE `tblemployees` ADD `cclgrant` INT(1) NOT NULL DEFAULT '0' AFTER `health_care_leave`;
+CREATE TABLE `leave_staff`.`calender` ( `event_name` VARCHAR(50) NOT NULL , `fromdate` VARCHAR(120) NOT NULL , `todate` VARCHAR(120) NOT NULL , `status` VARCHAR(15) NOT NULL , `description` VARCHAR(255) NOT NULL ) ENGINE = InnoDB;
