@@ -14,7 +14,6 @@
 						$leavetype;
 						if($query->rowCount() > 0)
 						{
-                            echo "got my results";
 						foreach($results as $result)
 						{ 
                             $avleave=$result->Av_leave;

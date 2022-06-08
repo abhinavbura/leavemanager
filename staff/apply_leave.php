@@ -16,6 +16,7 @@
 	$leave_days=$_POST['leave_days'];
 	$current = date("d-m-Y");
 	$datePosting=date("Y-m-d");
+	
 	$num_days=geDate($_POST['date_from'],$_POST['date_to']);
 	if($fromdate > $todate)
 	{
