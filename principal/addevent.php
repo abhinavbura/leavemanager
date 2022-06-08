@@ -28,11 +28,9 @@
 		$query->bindParam(':description',$description,PDO::PARAM_STR);
 		$query->bindParam(':status',$status,PDO::PARAM_STR);
         $query->execute();
-		$lastInsertId = $dbh->lastInsertId();
-		if($lastInsertId)
+		if($query)
 		{
 			echo "<script>alert('Event was added succesfully.');</script>";
-			echo "<script type='text/javascript'> document.location = 'leave_history.php'; </script>";
 		}
 		else 
 		{
