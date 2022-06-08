@@ -101,6 +101,19 @@
 								<td>
 									<div class="table-actions">
 										<a title="VIEW" href="leave_details.php?leaveid=<?php echo $row['lid'];?>"><i class="dw dw-eye" data-color="#265ed7"></i></a>	
+										<a title="DELETE" onclick='<?php
+											$llid=$row['lid']; 
+											$sql = "SELECT tblleaves.id as lid,tblemployees.emp_id,tblemployees.Av_leave,tblleaves.num_days,tblleaves.LeaveType from tblleaves join tblemployees on tblleaves.empid=tblemployees.emp_id where tblleaves.id=:lid";
+											$query = $dbh -> prepare($sql);
+											$query->bindParam(':lid',$lid,PDO::PARAM_STR);
+											$query->execute();
+											$result=mysqli_query($conn,'DELETE FROM tblleaves WHERE id='$row['lid']'');
+											if ($result) {
+												echo "<script>alert('Leave updated Successfully');</script>";
+											   } else{
+												 die(mysqli_error());
+											  }
+										?>'><i class="dw dw-delete-3" data-color="#265ed7"></i></a>	
 									</div>
 								</td>
 							</tr>

@@ -20,7 +20,7 @@
 	else {
 		
 
-		$sql="INSERT INTO calender(event_name,fromdate,todate,status,description) VALUES(:event_name,:fromdate,:todate,:description,:status)";
+		$sql="INSERT INTO calender(event_name,fromdate,todate,status,description) VALUES(:event_name,:fromdate,:todate,:status,:description)";
 		$query = $dbh->prepare($sql);
 		$query->bindParam(':event_name',$event_name,PDO::PARAM_STR);
         $query->bindParam(':fromdate',$fromdate,PDO::PARAM_STR);
