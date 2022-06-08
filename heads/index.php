@@ -290,7 +290,7 @@
 										</a>
 										<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
 											<a class="dropdown-item" href="leave_details.php?leaveid=<?php echo htmlentities($result->lid);?>"><i class="dw dw-eye"></i> View</a>
-											<a class="dropdown-item" href="admin_dashboard.php?leaveid=<?php echo htmlentities($result->lid);?>"><i class="dw dw-delete-3"></i> Delete</a>
+											<a class="dropdown-item" href="dellev.php?leaveid=<?php echo htmlentities($result->lid);?>><i class="dw dw-delete-3"></i> Delete</a>
 											<?php if($stats==0)
 											{ ?>
 											<a class="dropdown-item" href="haccept.php?leaveid=<?php echo $result->lid;?>&tracker=1"><i class="dw dw-eye"></i>Accept</a>
