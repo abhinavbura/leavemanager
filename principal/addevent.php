@@ -20,7 +20,7 @@
 	else {
 		
 
-		$sql="INSERT INTO tblleaves(event_name,fromdate,todate,status,description) VALUES(:event_name,:fromdate,:todate,:description,:status)";
+		$sql="INSERT INTO calender(event_name,fromdate,todate,status,description) VALUES(:event_name,:fromdate,:todate,:description,:status)";
 		$query = $dbh->prepare($sql);
 		$query->bindParam(':event_name',$event_name,PDO::PARAM_STR);
         $query->bindParam(':fromdate',$fromdate,PDO::PARAM_STR);
@@ -28,11 +28,9 @@
 		$query->bindParam(':description',$description,PDO::PARAM_STR);
 		$query->bindParam(':status',$status,PDO::PARAM_STR);
         $query->execute();
-		$lastInsertId = $dbh->lastInsertId();
-		if($lastInsertId)
+		if($query)
 		{
 			echo "<script>alert('Event was added succesfully.');</script>";
-			echo "<script type='text/javascript'> document.location = 'leave_history.php'; </script>";
 		}
 		else 
 		{
