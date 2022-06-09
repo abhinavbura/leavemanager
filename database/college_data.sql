@@ -242,4 +242,4 @@ ALTER TABLE `tblleaves` CHANGE `location` `location` VARCHAR(300) CHARACTER SET 
 ALTER TABLE `tblemployees` ADD `cclgrant` INT(1) NOT NULL DEFAULT '0' AFTER `health_care_leave`;
 CREATE TABLE `leave_staff`.`calender` ( `event_name` VARCHAR(50) NOT NULL , `fromdate` VARCHAR(120) NOT NULL , `todate` VARCHAR(120) NOT NULL , `status` VARCHAR(15) NOT NULL , `description` VARCHAR(255) NOT NULL ) ENGINE = InnoDB;
 ALTER TABLE `calender` ADD `eve_id` INT(11) NOT NULL AUTO_INCREMENT FIRST, ADD PRIMARY KEY (`eve_id`);
-ALTER TABLE `tblleaves` CHANGE `breathing` `breathing` INT(1) NOT NULL DEFAULT '0';
+ALTER TABLE `tblleaves` ADD `breathing` INT(1) NOT NULL DEFAULT '0';
