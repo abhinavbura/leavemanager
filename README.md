@@ -9,7 +9,7 @@ This application is a leave management system designed for colleges to streamlin
 - [Technologies Used](#technologies-used)
 - [Application Structure](#application-structure)
 - [Usage](#usage)
-- [installation].(#installation)
+- [Installation](#Installation)
 - [Contributing](#contributing)
 - [License](#license)
 
